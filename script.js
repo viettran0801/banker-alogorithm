@@ -120,6 +120,17 @@ function calcSafe() {
 
     init(0);
 
+    let str = '<h4 style="margin-top:1em">Need Table</h4><textarea rows="10" cols="40" readonly="true">';
+    for(let i = 0; i < numProcess; i ++) { 
+        for(let j = 0; j < numResource; j ++) {
+            str += needs[i][j] + ' ';
+        }
+        str += '\n';
+    }
+
+    str += '</textarea>'
+    document.getElementById('need').innerHTML = str;
+
     if(isSafe()) {
         result.innerHTML = `Safe: ${processes.map(v => `P${v}`).join('->')}`;
     }
@@ -152,7 +163,6 @@ function calcDeadLock() {
     }
     else {
         let deadProcess = [];
-        console.log(processes);
         for(let i = 0; i < numProcess; i ++) {
             if(!processes.includes(i)) {
                 deadProcess.push(i);
