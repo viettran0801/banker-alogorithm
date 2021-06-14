@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css"/>
+    <title>Banker</title>
+</head>
+<body>
+    <div class="container">
+        <div class="table-input">
+            <div>
+                <h3>Max</h3>
+                <textarea id="max" rows="10" cols="40" placeholder="Max table"></textarea>
+            </div>
+            <div>
+                <h3>Allocation</h3>
+                <textarea id="allo" rows="10" cols="40" placeholder="Allocation table"></textarea>
+            </div>
+            <div>
+                <h3>Request</h3>
+                <textarea id="req" rows="10" cols="40" placeholder="Request table"></textarea>
+            </div>
+        </div>
+        <div>
+            <h3>Resources</h3>
+            <input id="resources" placeholder="Resources"/>
+        </div>
+    
+        <div>
+            <button onclick="calcSafe()">Thuật toán an toàn</button>
+            <button onclick="calcDeadLock()">Chỉ ra bế tắc tổng quát</button>
+        </div>
+        <div>
+            <p id="error" class="error-message"></p>
+            <p id="result"></p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
